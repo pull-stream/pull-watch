@@ -1,6 +1,6 @@
 # pull-watch
 
-file.watch with pull streams
+fs.watch with pull streams using [`chokidar`](https://github.com/paulmillr/chokidar)
 
 ```shell
 npm install --save pull-watch
@@ -40,7 +40,7 @@ watch returns a [`pull-notify`](https://github.com/pull-stream/pull-notify) stre
 - `abort(err)`: function to end the file watcher and signal an error to all respective streams
 - `end()`: function to end the file watcher and signal completion to all respective streams
 
-`onReady` callback receives `(notify)` on `chokidar` "error" or "ready" event, respectively.
+`onReady(notify)` is called on "ready" event.
 
 ## license
 
