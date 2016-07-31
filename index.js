@@ -14,6 +14,7 @@ module.exports.ignores = ignores
 function fileWatch (glob, options, onReady) {
   if (arguments.length === 2) {
     onReady = options
+    options = {}
   }
 
   options = xtend({
