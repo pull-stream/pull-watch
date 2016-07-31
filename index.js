@@ -28,7 +28,9 @@ function fileWatch (glob, options, onReady) {
 
   var stream = {
     listen: notify.listen,
-    abort, end
+    add,
+    abort,
+    end
   }
 
   watcher
@@ -39,6 +41,11 @@ function fileWatch (glob, options, onReady) {
   .once('ready', function () {
     if (onReady) { onReady(stream) }
   })
+
+
+  function add (path) {
+    watcher.add(path)
+  }
 
   function abort (err) {
     watcher.close()
