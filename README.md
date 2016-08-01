@@ -28,7 +28,7 @@ pull(
 
 ### `watch = require('pull-watch')`
 
-### `notify = watch(paths,[ options,] onReady)`
+### `watcher = watch(paths,[ options,] onReady)`
 
 where `paths` is a files, dirs to be watched recursively, or glob patterns.
 
@@ -39,8 +39,9 @@ watch returns a [`pull-notify`](https://github.com/pull-stream/pull-notify) stre
 - `listen()`: function to create a pull source stream of the file watcher events
 - `abort(err)`: function to end the file watcher and signal an error to all respective streams
 - `end()`: function to end the file watcher and signal completion to all respective streams
+- `add(path)`: function to add file path to file watcher
 
-`onReady(notify)` is called on "ready" event.
+`onReady(watcher)` is called on "ready" event.
 
 ## license
 
